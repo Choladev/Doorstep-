@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>CK TechFix | Blog – Repair Tips & Tech News Lusaka</title>
+    <meta name="description" content="Read expert tips, repair guides, and tech news from CK TechFix. Learn how to fix common phone and laptop issues, extend battery life, and more.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: #f4f7fc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        :root {
+            --primary: #0047AB;
+            --primary-dark: #003380;
+            --electric: #00FFFF;
+            --midnight: #191970;
+            --gray: #475569;
+            --light: #f8fafc;
+            --shadow: 0 20px 35px -8px rgba(0, 71, 171, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 71, 171, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+        }
+
+        .logo-main {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            max-width: 170px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .logo-text span {
+            color: var(--electric);
+        }
+
+        .logo-tagline {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: var(--midnight);
+            margin-left: 60px;
+            margin-top: -4px;
+        }
+
+        .btn-back {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .btn-back:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: var(--light);
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb span {
+            color: var(--gray);
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(105deg, #ffffff 0%, #f0f5ff 100%);
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Search Bar */
+        .search-section {
+            margin: 30px 0;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .search-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        .cat-btn {
+            padding: 8px 22px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--midnight);
+        }
+
+        .cat-btn:hover, .cat-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px rgba(0, 71, 171, 0.15);
+        }
+
+        .blog-image {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .blog-card:hover .blog-image img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 22px;
+        }
+
+        .blog-category {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--light);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .blog-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--midnight);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .blog-excerpt {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--gray);
+            border-top: 1px solid #e2e8f0;
+            padding-top: 15px;
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            background: linear-gradient(135deg, var(--primary), var(--midnight));
+            border-radius: 28px;
+            padding: 40px;
+            margin: 40px 0;
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .featured-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .featured-content p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .featured-btn {
+            background: var(--electric);
+            color: var(--midnight);
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .featured-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .featured-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+        }
+
+        .page-btn {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--midnight);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .footer-col h3 {
+            color: var(--electric);
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: var(--silver, #CCCCCC);
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: var(--electric);
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            padding: 10px;
+            border-radius: 30px;
+            border: none;
+        }
+
+        .newsletter-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            z-index: 999;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .featured-post {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            .logo-text {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<a href="https://wa.me/260963414738" class="floating-whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<header>
+    <div class="container header-container">
+        <a href="index.html" class="logo">
+            <div class="logo-main">
+                <img src="pictures/logo.jpg" alt="CK TechFix Logo" class="logo-image">
+                <div class="logo-text">CK <span>TechFix</span></div>
+            </div>
+            <div class="logo-tagline">DOORSTEP REPAIR · LUSAKA</div>
+        </a>
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+    <div class="container">
+        <a href="index.html">Home</a> <span>&gt;</span>
+        <a href="#">About Us</a> <span>&gt;</span>
+        <span>Blogs</span>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Repair Tips & Tech News</h1>
+        <p>Expert advice, repair guides, and the latest tech updates from CK TechFix</p>
+    </div>
+</section>
+
+<!-- Search & Categories -->
+<div class="container">
+    <div class="search-section">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search articles...">
+            <i class="fas fa-search"></i>
+        </div>
+    </div>
+
+    <div class="categories">
+        <button class="cat-btn active" data-cat="all">All</button>
+        <button class="cat-btn" data-cat="repair">Repair Guides</button>
+        <button class="cat-btn" data-cat="tips">Tips & Tricks</button>
+        <button class="cat-btn" data-cat="news">Tech News</button>
+        <button class="cat-btn" data-cat="battery">Battery Care</button>
+        <button class="cat-btn" data-cat="water">Water Damage</button>
+    </div>
+</div>
+
+<!-- Featured Post -->
+<div class="container">
+    <div class="featured-post">
+        <div class="featured-content">
+            <h2>🔧 How to Extend Your Phone's Battery Life</h2>
+            <p>Learn 10 simple tips to make your smartphone battery last longer. From optimizing settings to avoiding common mistakes, these tricks will keep your phone running all day.</p>
+            <a href="#" class="featured-btn" onclick="openBlogModal(0)">Read Full Guide <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="featured-image">
+            <img src="https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?w=600&h=400&fit=crop" alt="Battery Life Tips">
+        </div>
+    </div>
+</div>
+
+<!-- Blog Grid -->
+<div class="container">
+    <div class="blog-grid" id="blogGrid"></div>
+    <div class="pagination" id="pagination"></div>
+</div>
+
+<!-- Blog Modal (Popup) -->
+<div id="blogModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; overflow-y: auto;">
+    <div style="background: white; max-width: 700px; width: 90%; border-radius: 28px; padding: 30px; max-height: 90vh; overflow-y: auto; position: relative;">
+        <button onclick="closeBlogModal()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>CK TechFix</h3>
+                <p>Fast doorstep repairs in Lusaka. Book now for 30-minute gadget fixes! We fix it all—Our expert technicians and a Customer satisfaction guarantee.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Phone Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">iPhone Repairs</a></li>
+                    <li><a href="#">Samsung Repairs</a></li>
+                    <li><a href="#">Google Pixel Repairs</a></li>
+                    <li><a href="#">Tecno Repairs</a></li>
+                    <li><a href="#">Infinix Repairs</a></li>
+                    <li><a href="#">Itel Repairs</a></li>
+                    <li><a href="#">Huawei Repairs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Laptop Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">MacBook Repairs</a></li>
+                    <li><a href="#">Dell Laptop Repairs</a></li>
+                    <li><a href="#">HP Laptop Repairs</a></li>
+                    <li><a href="#">Lenovo Repairs</a></li>
+                    <li><a href="#">Asus Repairs</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="blogs.html">Blogs</a></li>
+                    <li><a href="faq.html">FAQ's</a></li>
+                    <li><a href="help-support.html">Help & Support</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Stay Updated With Repair Tips & Deals</h3>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="text" placeholder="Enter your name" required>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe Newsletter</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2026 CK TechFix – Doorstep Mobile & Laptop Repair | Lusaka, Zambia</p>
+            <p>Payment Methods: Visa, MoMo, Airtel Money, Mastercard, Stripe</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Blog Data
+    const blogs = [
+        { id: 1, title: "How to Fix a Cracked Phone Screen at Home", category: "repair", excerpt: "A cracked screen doesn't always mean a trip to the repair shop. Learn temporary fixes and when to call a professional.", content: "<h3>How to Fix a Cracked Phone Screen</h3><p>A cracked screen can be frustrating, but here are some temporary fixes and professional solutions...</p><p><strong>Professional repair is always recommended</strong> for best results. At CK TechFix, we replace screens in 30 minutes at your doorstep.</p>", image: "https://images.pexels.com/photos/4906478/pexels-photo-4906478.jpeg?w=400&h=250&fit=crop", date: "Mar 15, 2026", readTime: "4 min read" },
+        { id: 2, title: "10 Tips to Extend Your Laptop Battery Life", category: "battery", excerpt: "Is your laptop battery draining too fast? Discover practical tips to maximize battery performance and longevity.", content: "<h3>10 Tips to Extend Your Laptop Battery Life</h3><p>1. Lower screen brightness<br>2. Close unused apps<br>3. Enable battery saver mode<br>4. Disable Bluetooth when not in use<br>5. Keep your laptop cool...</p><p>Need a battery replacement? CK TechFix offers doorstep service in 30 minutes.</p>", image: "https://images.pexels.com/photos/5691603/pexels-photo-5691603.jpeg?w=400&h=250&fit=crop", date: "Mar 10, 2026", readTime: "5 min read" },
+        { id: 3, title: "What to Do If Your Phone Gets Wet", category: "water", excerpt: "Panic mode? Don't worry. Follow these steps immediately to save your water-damaged phone.", content: "<h3>Phone Water Damage - What to Do</h3><p>Step 1: Turn off your phone immediately.<br>Step 2: Remove case, SIM, and memory card.<br>Step 3: Gently dry the exterior.<br>Step 4: Do NOT charge it or use a hairdryer.<br>Step 5: Bring it to a professional immediately.</p><p>CK TechFix offers water damage repair with high success rate using ultrasonic cleaning.</p>", image: "https://images.pexels.com/photos/5416420/pexels-photo-5416420.jpeg?w=400&h=250&fit=crop", date: "Mar 5, 2026", readTime: "3 min read" },
+            { id: 4, title: "iPhone vs Android: Which is Easier to Repair?", category: "news", excerpt: "Comparing repair costs, part availability, and DIY options for iPhone and Android devices.", content: "<h3>iPhone vs Android Repair Comparison</h3><p>iPhone repairs often require specialized tools, while Android parts are more widely available. However, both can be repaired quickly by professionals...</p><p>At CK TechFix, we repair both with genuine parts and doorstep service.</p>", image: "https://images.pexels.com/photos/699459/pexels-photo-699459.jpeg?w=400&h=250&fit=crop", date: "Feb 28, 2026", readTime: "6 min read" },
+        { id: 5, title: "Signs Your Phone Battery Needs Replacement", category: "battery", excerpt: "Is your phone dying too fast? Learn the warning signs of a failing battery and when to replace it.", content: "<h3>Signs Your Battery Needs Replacement</h3><p>1. Battery drains quickly<br>2. Phone shuts down at 20-30%<br>3. Phone gets hot while charging<br>4. Battery swells (visible bulging)</p><p>Contact CK TechFix for genuine battery replacement at your doorstep.</p>", image: "https://images.pexels.com/photos/4180471/pexels-photo-4180471.jpeg?w=400&h=250&fit=crop", date: "Feb 20, 2026", readTime: "3 min read" },
+        { id: 6, title: "How to Speed Up a Slow Android Phone", category: "tips", excerpt: "Is your Android phone lagging? Try these simple fixes to boost performance without buying a new phone.", content: "<h3>Speed Up Your Android Phone</h3><p>1. Clear app cache<br>2. Uninstall unused apps<br>3. Disable animations<br>4. Use lite versions of apps<br>5. Free up storage space</p><p>Still slow? CK TechFix can diagnose and fix hardware issues.</p>", image: "https://images.pexels.com/photos/404526/pexels-photo-404526.jpeg?w=400&h=250&fit=crop", date: "Feb 15, 2026", readTime: "4 min read" },
+        { id: 7, title: "MacBook vs Windows Laptop: Repair Costs Compared", category: "repair", excerpt: "Which laptop is cheaper to repair? A detailed breakdown of common repair costs for MacBooks and Windows laptops.", content: "<h3>MacBook vs Windows Repair Costs</h3><p>MacBook repairs (screen, battery, keyboard) are generally more expensive due to proprietary parts. Windows laptops have more affordable and widely available parts...</p><p>CK TechFix repairs both with transparent pricing and doorstep service.</p>", image: "https://images.pexels.com/photos/18105/pexels-photo.jpg?w=400&h=250&fit=crop", date: "Feb 10, 2026", readTime: "5 min read" },
+        { id: 8, title: "Charging Port Not Working? Here's Why", category: "repair", excerpt: "Common reasons why your charging port fails and how to fix it.", content: "<h3>Why Your Charging Port Isn't Working</h3><p>Common causes: lint buildup, damaged cable, loose connection, or faulty port. Try cleaning the port gently first. If that doesn't work, professional repair may be needed.</p><p>CK TechFix offers charging port repair in 30 minutes at your doorstep.</p>", image: "https://images.pexels.com/photos/4906481/pexels-photo-4906481.jpeg?w=400&h=250&fit=crop", date: "Feb 5, 2026", readTime: "3 min read" }
+    ];
+
+    let currentPage = 1;
+    const postsPerPage = 6;
+    let currentCategory = "all";
+    let currentSearch = "";
+
+    function filterBlogs() {
+        return blogs.filter(blog => {
+            const matchesCategory = currentCategory === "all" || blog.category === currentCategory;
+            const matchesSearch = blog.title.toLowerCase().includes(currentSearch.toLowerCase()) || 
+                                  blog.excerpt.toLowerCase().includes(currentSearch.toLowerCase());
+            return matchesCategory && matchesSearch;
+        });
+    }
+
+    function renderBlogs() {
+        const filtered = filterBlogs();
+        const totalPages = Math.ceil(filtered.length / postsPerPage);
+        const start = (currentPage - 1) * postsPerPage;
+        const paginatedBlogs = filtered.slice(start, start + postsPerPage);
+        
+        const grid = document.getElementById('blogGrid');
+        grid.innerHTML = paginatedBlogs.map(blog => `
+            <div class="blog-card" onclick="openBlogModal(${blog.id - 1})">
+                <div class="blog-image"><img src="${blog.image}" alt="${blog.title}"></div>
+                <div class="blog-content">
+                    <span class="blog-category">${blog.category.toUpperCase()}</span>
+                    <h3 class="blog-title">${blog.title}</h3>
+                    <p class="blog-excerpt">${blog.excerpt.substring(0, 100)}...</p>
+                    <div class="blog-meta">
+                        <span><i class="far fa-calendar"></i> ${blog.date}</span>
+                        <span><i class="far fa-clock"></i> ${blog.readTime}</span>
+                        <a href="#" class="read-more" onclick="event.stopPropagation();openBlogModal(${blog.id - 1})">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        
+        // Pagination
+        const pagination = document.getElementById('pagination');
+        let paginationHtml = '';
+        for (let i = 1; i <= totalPages; i++) {
+            paginationHtml += `<div class="page-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</div>`;
+        }
+        pagination.innerHTML = paginationHtml;
+    }
+
+    function goToPage(page) {
+        currentPage = page;
+        renderBlogs();
+    }
+
+    function openBlogModal(index) {
+        const blog = blogs[index];
+        const modal = document.getElementById('blogModal');
+        const modalContent = document.getElementById('modalContent');
+        modalContent.innerHTML = `
+            <img src="${blog.image}" style="width:100%; border-radius:20px; margin-bottom:20px;">
+            <h2 style="color: var(--primary);">${blog.title}</h2>
+            <div style="color: var(--gray); margin: 10px 0;"><i class="far fa-calendar"></i> ${blog.date} • <i class="far fa-clock"></i> ${blog.readTime}</div>
+            <div>${blog.content}</div>
+            <a href="https://wa.me/260963414738?text=I%20read%20your%20blog%20about%20${encodeURIComponent(blog.title)}%20and%20need%20repair%20help" class="btn" style="display:inline-block; margin-top:20px; background: #25D366; color:white; padding:12px 24px; border-radius:40px; text-decoration:none;"><i class="fab fa-whatsapp"></i> Need Repair? Chat with Us</a>
+        `;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeBlogModal() {
+        document.getElementById('blogModal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    // Category filter
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCategory = btn.getAttribute('data-cat');
+            currentPage = 1;
+            renderBlogs();
+        });
+    });
+
+    // Search
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+        currentSearch = e.target.value;
+        currentPage = 1;
+        renderBlogs();
+    });
+
+    // Newsletter
+    document.getElementById('newsletterForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thanks for subscribing! You\'ll receive repair tips and deals.');
+        e.target.reset();
+    });
+
+    renderBlogs();
+</script>
+</body>
+</html>
