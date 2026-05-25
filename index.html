@@ -1,40 +1,574 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>CK TechFix | Blog – Repair Tips & Tech News Lusaka</title>
-    <meta name="description" content="Read expert tips, repair guides, and tech news from CK TechFix. Learn how to fix common phone and laptop issues, extend battery life, and more.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-        body {
-            background: #f4f7fc;
-            color: #1e293b;
-            line-height: 1.6;
-        }
+<title>CK TechFix | Doorstep Mobile Repair Zambia</title>
 
-        :root {
-            --primary: #0047AB;
-            --primary-dark: #003380;
-            --electric: #00FFFF;
-            --midnight: #191970;
-            --gray: #475569;
-            --light: #f8fafc;
-            --shadow: 0 20px 35px -8px rgba(0, 71, 171, 0.15);
-            --transition: all 0.3s ease;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-        .container {
-            width: 90%;
-            max-width: 1280px;
-            margin: 0 auto;
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+background:#fff;
+overflow-x:hidden;
+}
+
+/* PRELOADER */
+
+#preloader{
+position:fixed;
+width:100%;
+height:100vh;
+background:white;
+z-index:9999;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+}
+
+.loader-circle{
+width:90px;
+height:90px;
+border:8px solid #ddd;
+border-top:8px solid #0066ff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+.hero{
+padding:100px 20px;
+background:linear-gradient(135deg,#001633,#004cff);
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:45px;
+font-weight:800;
+}
+
+.hero p{
+margin-top:20px;
+font-size:18px;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:40px;
+border:none;
+background:white;
+color:#004cff;
+font-weight:700;
+margin-top:25px;
+}
+
+.steps{
+
+display:flex;
+justify-content:center;
+gap:20px;
+padding:60px 20px;
+flex-wrap:wrap;
+
+}
+
+.step{
+
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+padding:30px;
+width:250px;
+
+border-radius:20px;
+
+transition:.5s;
+
+}
+
+.step:hover{
+
+transform:translateY(-10px);
+
+}
+
+.search{
+
+padding:40px;
+
+}
+
+.searchbox{
+
+max-width:700px;
+
+margin:auto;
+
+padding:25px;
+
+background:white;
+
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+
+border-radius:20px;
+
+}
+
+input{
+
+width:100%;
+
+padding:18px;
+
+border-radius:12px;
+
+border:1px solid #ddd;
+
+margin-top:20px;
+
+}
+
+.device-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.device{
+
+padding:40px;
+
+text-align:center;
+
+background:#f7f7f7;
+
+border-radius:20px;
+
+transition:.5s;
+
+}
+
+.device:hover{
+
+background:#0066ff;
+
+color:white;
+
+transform:scale(1.05);
+
+}
+
+.brands{
+
+padding:80px 20px;
+
+background:#f9fbff;
+
+}
+
+.brand-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+gap:20px;
+
+margin-top:40px;
+
+}
+
+.brand{
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+}
+
+.timeline{
+
+padding:80px 20px;
+
+}
+
+.item{
+
+margin:30px 0;
+
+padding:25px;
+
+background:#f7f7f7;
+
+border-left:5px solid blue;
+
+border-radius:12px;
+
+}
+
+.tiktok{
+
+padding:80px 20px;
+
+text-align:center;
+
+background:#001633;
+
+color:white;
+
+}
+
+iframe{
+
+width:100%;
+
+max-width:350px;
+
+height:620px;
+
+border:none;
+
+border-radius:20px;
+
+}
+
+footer{
+
+padding:30px;
+
+background:black;
+
+color:white;
+
+text-align:center;
+
+}
+
+.whatsapp{
+
+position:fixed;
+
+bottom:25px;
+
+right:25px;
+
+width:65px;
+
+height:65px;
+
+background:#25d366;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+color:white;
+
+text-decoration:none;
+
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+
+}
+
+.fade{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:none;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="preloader">
+
+<div class="loader-circle"></div>
+
+<h2 style="margin-top:20px;color:#0066ff;">
+CK TECHFIX
+</h2>
+
+</div>
+
+<section class="hero">
+
+<h1>
+CK TECHFIX
+</h1>
+
+<h2>
+Lusaka's Doorstep Mobile Repairing GURU 🚲
+</h2>
+
+<p>
+
+Samsung • Apple • Google Pixel Specialists
+
+<br><br>
+
+We Come To You
+
+</p>
+
+<button class="btn">
+BOOK REPAIR
+</button>
+
+</section>
+
+<section class="steps fade">
+
+<div class="step">
+
+<h2>1</h2>
+
+<h3>Select Device</h3>
+
+</div>
+
+<div class="step">
+
+<h2>2</h2>
+
+<h3>Choose Repair</h3>
+
+</div>
+
+<div class="step">
+
+<h2>3</h2>
+
+<h3>Finalize</h3>
+
+</div>
+
+</section>
+
+<section class="search fade">
+
+<div class="searchbox">
+
+<h2>
+
+Which model do you have?
+
+</h2>
+
+<input placeholder="Samsung S20+, iPhone 13 Pro Max">
+
+<div class="device-grid">
+
+<div class="device">📱 Smartphone</div>
+
+<div class="device">⌚ Watch</div>
+
+<div class="device">💻 Laptop</div>
+
+<div class="device">📟 Tablet</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="brands fade">
+
+<h1 align=center>
+
+Specialized Brands
+
+</h1>
+
+<div class="brand-grid">
+
+<div class="brand">
+
+Samsung Galaxy
+
+</div>
+
+<div class="brand">
+
+Apple iPhone
+
+</div>
+
+<div class="brand">
+
+Google Pixel
+
+</div>
+
+<div class="brand">
+
+Tecno
+
+</div>
+
+<div class="brand">
+
+Infinix
+
+</div>
+
+<div class="brand">
+
+Huawei / itel
+
+</div>
+
+</div>
+
+</section>
+
+<section class="timeline fade">
+
+<h1 align=center>
+
+How CK TechFix Works
+
+</h1>
+
+<div class="item">
+
+📱 Select Device
+
+</div>
+
+<div class="item">
+
+🔧 Choose Repair
+
+</div>
+
+<div class="item">
+
+🚲 Technician Travels
+
+</div>
+
+<div class="item">
+
+✅ You Relax
+
+</div>
+
+</section>
+
+<section class="tiktok">
+
+<h1>
+
+Watch CK TechFix In Action
+
+</h1>
+
+<br>
+
+<iframe src="https://www.tiktok.com/embed"></iframe>
+
+</section>
+
+<footer>
+
+© 2026 CK TECHFIX
+
+<br>
+
+WE FIX • YOU RELAX
+
+<br><br>
+
+WhatsApp:
+
++260963414738
+
+</footer>
+
+<a class="whatsapp"
+href="https://wa.me/260963414738">
+
+💬
+
+</a>
+
+<script>
+
+setTimeout(()=>{
+
+document.getElementById("preloader")
+.style.display="none";
+
+},2500);
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+})
+
+})
+
+document.querySelectorAll(".fade")
+
+.forEach(el=>observer.observe(el))
+
+</script>
+
+</body>
+
+</html>            margin: 0 auto;
             padding: 0 20px;
         }
 
